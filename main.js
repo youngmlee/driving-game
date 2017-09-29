@@ -6,8 +6,11 @@ class Car {
     this.speed = speed
     this.location = location
   }
-  accelerate(amount) {
-    this.speed += amount
+  accelerate() {
+    this.speed += 1
+  }
+  static accelerate(car) {
+    car.accelerate()
   }
   move() {
     var $police = document.querySelector('img')
@@ -84,6 +87,9 @@ document.body.addEventListener('keydown', function (e) {
       break
     case '40':
       Car.turn($police, 'South')
+      break
+    case '32':
+      Car.accelerate($police)
       break
   }
 })
