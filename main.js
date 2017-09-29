@@ -29,6 +29,12 @@ class Car {
       car.move()
     }, 50)
   }
+  stop() {
+    this.speed = 0
+  }
+  static stop(car) {
+    car.stop()
+  }
 }
 
 var $police = document.querySelector('img')
@@ -45,8 +51,11 @@ function render() {
 document.body.addEventListener('keydown', function (e) {
   const pressedKey = e.keyCode.toString()
   switch (pressedKey) {
-    case '32':
+    case '71':
       Car.start($police)
+      break
+    case '83':
+      Car.stop($police)
       break
   }
 })
