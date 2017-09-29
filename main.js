@@ -12,6 +12,12 @@ class Car {
   static accelerate(car) {
     car.accelerate()
   }
+  decelerate() {
+    this.speed -= 1
+  }
+  static decelerate(car) {
+    car.decelerate()
+  }
   move() {
     var $police = document.querySelector('img')
     switch (this.direction) {
@@ -90,6 +96,9 @@ document.body.addEventListener('keydown', function (e) {
       break
     case '32':
       Car.accelerate($police)
+      break
+    case '18':
+      Car.decelerate($police)
       break
   }
 })
