@@ -1,4 +1,6 @@
 .racecourse {
+  position: relative;
+  bottom: 170px;
   width: 100%;
   height: 1000px;
   background-image: url('racecourse.jpg');
@@ -22,7 +24,28 @@ img {
 .instructions {
   position: absolute;
   top: 900px;
-  left: 200px;
+  left: 20px;
   font-size: 3em;
   color: #88b04b;
+}
+
+.mph {
+  position: absolute;
+  font-size: 1.2em;
+  color: gold;
+  z-index: 2;
+  text-align: center;
+  margin-top: 26px;
+}
+
+.whiteblock {
+  position: absolute;
+  top: 350px;
+  left: 980px;
+  border: thick purple double;
+  border-radius: 10px;
+  width: 120px;
+  height: 100px;
+  background-color: black;
+  z-index: 1;
 }

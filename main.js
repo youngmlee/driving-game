@@ -44,6 +44,7 @@ class Car {
     }
   }
   static start(car) {
+    this.speed += 1
     setInterval(function () {
       car.move()
     }, 50)
@@ -66,11 +67,16 @@ var $police = document.querySelector('img')
 
 $police = new Car('East', 1, [0, 0])
 
+var test = true
+
 function render() {
   var $police = document.querySelector('img')
+  var $crash = document.querySelector('.crash')
   var [x, y] = this.$police.location
   $police.style.left = x + 'px'
   $police.style.top = y + 'px'
+  var $mph = document.querySelector('.mph')
+  $mph.textContent = 'Current speed: ' + this.$police.speed + ' mph'
 }
 
 document.body.addEventListener('keydown', function (e) {
@@ -79,25 +85,25 @@ document.body.addEventListener('keydown', function (e) {
     case '71':
       Car.start($police)
       break
-    case '83':
+    case '72':
       Car.stop($police)
       break
-    case '37':
+    case '65':
       Car.turn($police, 'West')
       break
-    case '38':
+    case '87':
       Car.turn($police, 'North')
       break
-    case '39':
+    case '68':
       Car.turn($police, 'East')
       break
-    case '40':
+    case '83':
       Car.turn($police, 'South')
       break
-    case '32':
+    case '13':
       Car.accelerate($police)
       break
-    case '18':
+    case '16':
       Car.decelerate($police)
       break
   }
