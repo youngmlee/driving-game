@@ -1,4 +1,12 @@
 img {
+  position: absolute;
   width: 160px;
   height: 80px;
+}
+
+div {
+  position: absolute;
+  top: 20%;
+  font-size: 3em;
+  color: blue;
 }
