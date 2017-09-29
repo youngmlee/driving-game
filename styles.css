@@ -13,6 +13,7 @@ img {
   margin-left: 330px;
   width: 80px;
   height: 40px;
+  z-index: 2;
 }
 
 .northsouth {
@@ -23,17 +24,20 @@ img {
 
 .instructions {
   position: absolute;
-  top: 900px;
-  left: 20px;
+  top: 920px;
+  padding: 20px;
   font-size: 3em;
-  color: #88b04b;
+  line-height: 10px;
+  color: black;
+  background-color: lightblue;
+  border: thick blue double;
 }
 
 .mph {
   position: absolute;
   font-size: 1.2em;
   color: gold;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
   margin-top: 26px;
 }
@@ -47,5 +51,4 @@ img {
   width: 120px;
   height: 100px;
   background-color: black;
-  z-index: 1;
 }

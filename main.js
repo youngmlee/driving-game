@@ -12,6 +12,12 @@ class Car {
   static accelerate(car) {
     car.accelerate()
   }
+  nos() {
+    this.speed += 10
+  }
+  static nos(car) {
+    car.nos()
+  }
   decelerate() {
     this.speed -= 1
   }
@@ -67,7 +73,7 @@ var $police = document.querySelector('img')
 
 $police = new Car('East', 1, [0, 0])
 
-var test = true
+var lap = 1
 
 function render() {
   var $police = document.querySelector('img')
@@ -76,7 +82,7 @@ function render() {
   $police.style.left = x + 'px'
   $police.style.top = y + 'px'
   var $mph = document.querySelector('.mph')
-  $mph.textContent = 'Current speed: ' + this.$police.speed + ' mph'
+  $mph.textContent = 'Current speed: ' + this.$police.speed + ' mph ' + ' Lap: ' + lap
 }
 
 document.body.addEventListener('keydown', function (e) {
@@ -105,6 +111,15 @@ document.body.addEventListener('keydown', function (e) {
       break
     case '16':
       Car.decelerate($police)
+      break
+    case '76':
+      lap += 1
+      break
+    case '186':
+      lap -= 1
+      break
+    case '78':
+      Car.nos($police)
       break
   }
 })
