@@ -10,18 +10,28 @@ class Car {
     this.speed += amount
   }
   move() {
+    var $police = document.querySelector('img')
     switch (this.direction) {
       case 'North':
-        this.location[1] += this.speed
-        break
-      case 'South':
+        $police.setAttribute('src', 'police-north.png')
+        $police.setAttribute('class', 'northsouth')
         this.location[1] -= this.speed
         break
+      case 'South':
+        $police.setAttribute('src', 'police-south.png')
+        $police.setAttribute('class', 'northsouth')
+        this.location[1] += this.speed
+        break
       case 'East':
+        $police.setAttribute('src', 'police-east.png')
+        $police.setAttribute('class', 'img')
         this.location[0] += this.speed
         break
       case 'West':
+        $police.setAttribute('src', 'police-west.png')
+        $police.setAttribute('class', 'img')
         this.location[0] -= this.speed
+        break
     }
   }
   static start(car) {
@@ -34,6 +44,12 @@ class Car {
   }
   static stop(car) {
     car.stop()
+  }
+  turn(direction) {
+    this.direction = direction
+  }
+  static turn(car, direction) {
+    car.turn(direction)
   }
 }
 
@@ -56,6 +72,18 @@ document.body.addEventListener('keydown', function (e) {
       break
     case '83':
       Car.stop($police)
+      break
+    case '37':
+      Car.turn($police, 'West')
+      break
+    case '38':
+      Car.turn($police, 'North')
+      break
+    case '39':
+      Car.turn($police, 'East')
+      break
+    case '40':
+      Car.turn($police, 'South')
       break
   }
 })
